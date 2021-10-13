@@ -34,7 +34,7 @@ find_package(GTest CONFIG REQUIRED)
 
 add_library(${PROJECT_NAME} STATIC
   # enum your files and delete this comment
-        include/experiment.hpp sources/experiment.cpp)
+        include/experiment.hpp sources/experiment.cpp sources/magic.cpp)
 
 add_executable(demo
   ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp

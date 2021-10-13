@@ -1,14 +1,8 @@
-//
+// COpyright 2021 SovesT
 // Created by sovest on 11.10.2021.
 //
 
 #include <experiment.hpp>
-
-void create(int *buffer, size_t size) {
-  for (size_t i = 0; i < size; ++i) {
-    buffer[i] = rand();
-  }
-}
 
 void heat(const int *buffer, size_t size) {
   [[maybe_unused]] int k = 0;
@@ -40,7 +34,7 @@ void create_order(int *order, size_t size) {
     order[i] = i * 16;
   }
   for (size_t i = 0; i < size / 16; ++i) {
-    std::swap(order[i], order[rand()%(size / 16)]);
+    std::swap(order[i], order[rand() % (size / 16)]);
   }
 }
 
@@ -56,7 +50,6 @@ void circle_rand(const int *buffer, size_t size, const int *order) {
 size_t experiment_forward(size_t size) {
   size_t start, end;
   int *buffer = new int[size];
-  create(buffer, size);
   heat(buffer, size);
   start = clock();
   circle(buffer, size);
@@ -68,7 +61,6 @@ size_t experiment_forward(size_t size) {
 size_t experiment_backward(size_t size) {
   size_t start, end;
   int *buffer = new int[size];
-  create(buffer, size);
   heat(buffer, size);
   start = clock();
   circle_back(buffer, size);
@@ -79,10 +71,8 @@ size_t experiment_backward(size_t size) {
 
 size_t experiment_random(size_t size) {
   size_t start, end;
-  int *buffer = new int[size],
-      *order = new int[size / 16];
+  int *buffer = new int[size], *order = new int[size / 16];
   create_order(order, size);
-  create(buffer, size);
   heat(buffer, size);
   start = clock();
   circle_rand(buffer, size, order);

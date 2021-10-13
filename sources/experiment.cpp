@@ -61,6 +61,7 @@ size_t experiment_forward(size_t size) {
   start = clock();
   circle(buffer, size);
   end = clock();
+  delete[] buffer;
   return end - start;
 }
 
@@ -72,6 +73,7 @@ size_t experiment_backward(size_t size) {
   start = clock();
   circle_back(buffer, size);
   end = clock();
+  delete[] buffer;
   return end - start;
 }
 
@@ -85,5 +87,7 @@ size_t experiment_random(size_t size) {
   start = clock();
   circle_rand(buffer, size, order);
   end = clock();
+  delete[] buffer;
+  delete[] order;
   return end - start;
 }

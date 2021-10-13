@@ -1,9 +1,9 @@
-//
+// Copyright 2021 SovesT
 // Created by sovest on 11.10.2021.
 //
 
-#ifndef TEMPLATE_EXPERIMENT_HPP
-#define TEMPLATE_EXPERIMENT_HPP
+#ifndef INCLUDE_EXPERIMENT_HPP_
+#define INCLUDE_EXPERIMENT_HPP_
 
 #include <algorithm>
 #include <cstdlib>
@@ -23,4 +23,4 @@ void print(size_t, size_t, size_t);
 
 void magic();
 
-#endif  // TEMPLATE_EXPERIMENT_HPP
+#endif  // INCLUDE_EXPERIMENT_HPP_
